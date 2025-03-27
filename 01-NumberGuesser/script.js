@@ -6,7 +6,7 @@ let number = parseInt(numberInput);
 let random = Math.floor(Math.random() * number) + 1;
 console.log(random);
 createCircle(number);
-let x = 6;
+let x = 5;
 function createCircle(number) {
 
     if(number < 10){
@@ -28,6 +28,7 @@ function createCircle(number) {
             if (parseInt(element.innerText) === random) {
                 element.style.backgroundColor = "green";
                 alert("Congratulations! You have won the game");
+                circle.innerText = "Restart the Game";
                 return;
             } else if (parseInt(element.innerText) > random) {
                 element.style.backgroundColor = "red";
@@ -37,7 +38,7 @@ function createCircle(number) {
             x--;
             if(x === 0){
                 alert("Game Over! The correct number was " + random);
-                paragraph.innerText = "";
+                circle.innerText = "Restart the Game";
 
                 return;
             }
