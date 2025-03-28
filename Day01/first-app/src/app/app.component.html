@@ -9,3 +9,49 @@
 <h2>{{data}}</h2>
 <button (click) = 'incrementData()'>Increment</button>
 <button (click) = 'decrementData()'>Decrement</button>
+<div>
+    <h1 [hidden]="hidden">This is Angular Batch</h1>
+</div>
+<input type="text" (click)='OnClick(box.value)' #box>
+<br>
+<h2 *ngIf="age>=20">Eligible for Voting</h2>
+<br>
+<div *ngFor="let player of players">
+    <p>{{player.id}} {{player.name}} {{player.email}}</p>
+</div>
+<br>
+<h1>ToDo App</h1>
+<br>
+<input type="text" #task>
+<button (click)="addTask(task.value)">Add Task</button>
+<div>
+    <h2>Tasks:</h2>
+    <ul>
+        <li *ngFor="let task of tasks">{{task}}
+            <button (click)="OnClickCheck(task)">Check</button>
+            <button (click)="OnClickDelete(task)">Delete</button>
+        </li>
+    </ul>
+    <h2>Completed Tasks</h2>
+    <ul>
+        <li *ngFor="let completedTask of completedTasks">{{completedTask}}
+            <button (click)="OnClickDeleteCompleted(completedTask)">Delete</button>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <p *ngIf="whether; then firstTask; else secondTask"></p>
+</div>
+
+<ng-template #firstTask>
+    <h1>First Task</h1>
+</ng-template>
+
+<ng-template #secondTask>
+    <h1>Second Task</h1>
+</ng-template>
+
+<div>
+    <p #thirdTask>Using Div</p>
+</div>
