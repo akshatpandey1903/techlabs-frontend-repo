@@ -1,0 +1,9 @@
+<h1>Root Component</h1>
+
+<app-home></app-home>
+<app-courses></app-courses>
+
+<h2>Show Data</h2>
+<input (keyup.enter)="alertData()" type="text" [(ngModel)]="data" placeholder="Enter a name"/>
+<p>{{data}}</p>
+
