@@ -73,4 +73,6 @@ export class AppComponent {
 
   @ViewChild('thirdTask')
   task!: ElementRef;
+
+  myCol: string = 'red';
 }
