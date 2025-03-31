@@ -9,6 +9,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = '02-app';
   data: string = "sachin";
+
+  getData(){
+    return this.data;
+  }
+
   alertData(){
     alert(this.data);
   }
