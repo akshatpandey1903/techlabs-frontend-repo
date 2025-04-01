@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,4 +8,12 @@ import { Component, Input } from '@angular/core';
 })
 export class HomeComponent {
   @Input() dataFromRoot: string = "";
+  sendResult: string = "Ok";
+
+  @Output() eventToSendToParent:EventEmitter<string> = new EventEmitter<string>();
+
+  sendData(){
+    this.eventToSendToParent.emit(this.sendResult);
+    // alert(this.sendResult);
+  }
 }

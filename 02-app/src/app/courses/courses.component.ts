@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-courses',
@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './courses.component.css'
 })
 export class CoursesComponent {
-
+  @Input() freeCourses= 0;
+  @Input() paidCourses= 0;
+  @Input() totalCourses= 0;
 }

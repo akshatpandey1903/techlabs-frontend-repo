@@ -1,7 +1,10 @@
 <h1>Root Component</h1>
 
-<app-home [dataFromRoot]="getData()"></app-home>
-<app-courses></app-courses>
+<app-home (eventToSendToParent)="showData($event)"></app-home>
+<app-courses [paidCourses]="getPaidCourseCount()" 
+  [freeCourses]="getFreeCourseCount()"
+  [totalCourses]="getTotalCourseCount()" 
+></app-courses>
 
 <h2>Show Data</h2>
 <input (keyup.enter)="alertData()" type="text" [(ngModel)]="data" placeholder="Enter a name"/>
